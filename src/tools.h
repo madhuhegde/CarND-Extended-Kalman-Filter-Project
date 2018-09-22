@@ -8,6 +8,7 @@ using Eigen::VectorXd;
 using namespace std;
 
 class Tools {
+
 public:
   /**
   * Constructor.
@@ -28,6 +29,15 @@ public:
   * A helper method to calculate Jacobians.
   */
   MatrixXd CalculateJacobian(const VectorXd& x_state);
+  
+private:
+    
+  // Variables for RMSE computation
+  VectorXd mse;
+  VectorXd alpha;  /* Used for Convex Averaging */
+  VectorXd beta;
+  VectorXd rmse;
+
 
 };
 
